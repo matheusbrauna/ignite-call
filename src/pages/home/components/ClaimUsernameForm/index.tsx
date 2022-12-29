@@ -48,7 +48,7 @@ export function ClaimUsernameForm() {
       <FormAnnotation>
         <Text
           size="sm"
-          css={{ color: `${errors.username ? '#CC2937 !important' : ''}` }}
+          css={{ color: `${errors.username ? '#F75A68 !important' : ''}` }}
         >
           {errors.username
             ? errors.username.message

@@ -16,6 +16,8 @@ export default function ConnectCalendar() {
   const hasAuthError = !!query.error
   const isSignedIn = session.status === 'authenticated'
 
+  console.log(session)
+
   return (
     <Container>
       <Header>

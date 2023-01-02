@@ -12,4 +12,26 @@ export const globalStyles = globalCss({
     color: '$gray100',
     '-webkit-font-smoothing': 'antialiased',
   },
+
+  'input::-webkit-outer-spin-button, input::-webkit-inner-spin-button': {
+    '-webkit-appearance': 'none',
+    margin: 0,
+  },
+
+  'input[type="number"]': {
+    '-moz-appearance': 'textfield',
+  },
+
+  '::-webkit-scrollbar': {
+    width: '0.25rem',
+  },
+
+  '::-webkit-scrollbar-track': {
+    background: '$gray600',
+  },
+
+  '::-webkit-scrollbar-thumb': {
+    background: '$gray500',
+    borderRadius: 3,
+  },
 })

@@ -14,7 +14,7 @@ export default function ConnectCalendar() {
   }
 
   async function handleNavigateToNextStep() {
-    await push('/register/update-profile')
+    await push('/register/time-intervals')
   }
 
   const hasAuthError = !!query.error

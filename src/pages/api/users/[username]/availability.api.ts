@@ -36,7 +36,8 @@ export default async function handler(
 
   if (isPastDate) {
     return res.json({
-      availability: [],
+      possibleTimes: [],
+      availableTimes: [],
     })
   }
 
@@ -49,7 +50,8 @@ export default async function handler(
 
   if (!userAvailability) {
     return res.json({
-      availability: [],
+      possibleTimes: [],
+      availableTimes: [],
     })
   }
 
@@ -78,10 +80,15 @@ export default async function handler(
     },
   })
 
-  const availableTimes = possibleTimes.filter(
-    (time) =>
-      !blockedTimes.some((blockedTime) => blockedTime.date.getHours() === time),
-  )
+  const availableTimes = possibleTimes.filter((time) => {
+    const isTimeBlocked = blockedTimes.some(
+      (blockedTime) => blockedTime.date.getHours() === time,
+    )
+
+    const isTimeInPast = referenceDate.set('hour', time).isBefore(new Date())
+
+    return !isTimeBlocked && !isTimeInPast
+  })
 
   return res.json({
     possibleTimes,

@@ -42,7 +42,7 @@ export default function UpdateProfile() {
       bio,
     })
 
-    await push(`/schedule/${session.data?.user.name}`)
+    await push(`/schedule/${session.data?.user.username}`)
   }
 
   return (
